@@ -1,0 +1,57 @@
+[
+  {
+    "id": "KI-101",
+    "team": "payments",
+    "title": "TypeError when applying a null coupon at checkout",
+    "service": "checkout-api",
+    "type": "TypeError",
+    "message": "Cannot read properties of null (reading 'discountPct')",
+    "top_frame": "at CheckoutService.applyCoupon (src/checkout/CheckoutService.ts:88:31)",
+    "root_cause": "applyCoupon dereferences coupon before checking it exists when the coupon code expired between cart load and payment.",
+    "github_issue": 101
+  },
+  {
+    "id": "KI-102",
+    "team": "payments",
+    "title": "TransferWorker times out calling ledger-service",
+    "service": "transfer-worker",
+    "type": "TimeoutError",
+    "message": "Request to ledger-service timed out after 5000ms (POST /v2/entries)",
+    "top_frame": "at LedgerClient.postEntry (src/clients/LedgerClient.ts:42:11)",
+    "root_cause": "ledger-service connection pool exhaustion under month-end batch load; worker retries amplify it.",
+    "github_issue": 102
+  },
+  {
+    "id": "KI-103",
+    "team": "frontend",
+    "title": "Hydration mismatch on /dashboard",
+    "service": "web",
+    "type": "Error",
+    "message": "Hydration failed because the initial UI does not match what was rendered on the server.",
+    "top_frame": "at DashboardGreeting (app/dashboard/Greeting.tsx:14:7)",
+    "root_cause": "Greeting renders the local time with new Date() on both server and client.",
+    "github_issue": 103
+  },
+  {
+    "id": "KI-104",
+    "team": "auth",
+    "title": "JWT signature validation fails after signing-key rotation",
+    "service": "auth-service",
+    "type": "JsonWebTokenError",
+    "message": "invalid signature: no key found for kid 'k-2026-09'",
+    "top_frame": "at verifyAccessToken (src/auth/jwt.ts:61:13)",
+    "root_cause": "JWKS cache is not refreshed after rotation; tokens signed with the new kid are rejected until restart.",
+    "github_issue": 104
+  },
+  {
+    "id": "KI-105",
+    "team": "data",
+    "title": "Orders report query exceeds 30s",
+    "service": "reports",
+    "type": "QueryTimeoutError",
+    "message": "canceling statement due to statement timeout",
+    "top_frame": "at OrdersReport.run (src/reports/OrdersReport.ts:120:9)",
+    "root_cause": "Missing composite index on orders(tenant_id, created_at) for the monthly report.",
+    "github_issue": 105
+  }
+]

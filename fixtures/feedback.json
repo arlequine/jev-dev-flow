@@ -1,0 +1,19 @@
+[
+  { "id": "F01", "channel": "app_review", "text": "Me cobraron dos veces este mes y nadie del soporte me responde. Si no me regresan mi dinero cancelo hoy mismo.",
+    "gold": { "topic": "billing", "frustration": 3, "asks_refund": true, "churn_risk": true, "mentions_competitor": false, "design_signal": false } },
+  { "id": "F02", "channel": "survey", "text": "No encuentro dónde descargar mis facturas, le di vueltas al menú como 10 minutos.",
+    "gold": { "topic": "ux_confusion", "frustration": 2, "asks_refund": false, "churn_risk": false, "mentions_competitor": false, "design_signal": true } },
+  { "id": "F03", "channel": "twitter", "text": "Love the new dark mode!! Finally I can use it at night 🙌",
+    "gold": { "topic": "praise", "frustration": 0, "asks_refund": false, "churn_risk": false, "mentions_competitor": false, "design_signal": true } },
+  { "id": "F04", "channel": "support_chat", "text": "En la app de MercadoPagos puedo programar pagos recurrentes, ¿ustedes cuándo lo van a tener?",
+    "gold": { "topic": "feature_request", "frustration": 1, "asks_refund": false, "churn_risk": false, "mentions_competitor": true, "design_signal": false } },
+  { "id": "F05", "channel": "app_review", "text": "La app se cierra sola cada vez que intento subir mi foto de perfil desde el iPhone.",
+    "gold": { "topic": "bug", "frustration": 2, "asks_refund": false, "churn_risk": false, "mentions_competitor": false, "design_signal": false } },
+  { "id": "F06", "channel": "survey", "text": "El precio subió 40% sin aviso. Ya estoy viendo otras opciones, esto no se hace.",
+    "gold": { "topic": "pricing", "frustration": 3, "asks_refund": false, "churn_risk": true, "mentions_competitor": false, "design_signal": false } },
+  { "id": "F07", "channel": "support_chat", "text": "Todo bien con el servicio, solo quería saber si emiten factura con RFC genérico. Gracias!",
+    "gold": { "topic": "other", "frustration": 0, "asks_refund": false, "churn_risk": false, "mentions_competitor": false, "design_signal": false } },
+  { "id": "F08", "channel": "twitter", "text": "\"Reembolso garantizado\" dicen... ja. Pero bueno, el botón nuevo de pagar sí está más claro, eso sí se los acepto.",
+    "gold": { "topic": "praise", "frustration": 1, "asks_refund": false, "churn_risk": false, "mentions_competitor": false, "design_signal": true },
+    "edge_case": "Sarcasmo + menciona 'reembolso' sin pedirlo: asks_refund debe ser false." }
+]

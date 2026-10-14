@@ -1,0 +1,30 @@
+{
+  "name": "jev-dev-flow",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Demo: decisiones baratas y calibradas con Jev + generación con Claude solo donde aporta valor",
+  "scripts": {
+    "flow": "tsx src/cli.ts",
+    "mcp": "tsx src/mcp/server.ts",
+    "gate-hook": "tsx scripts/gate-hook.ts",
+    "dashboard": "tsx src/dashboard/build.ts",
+    "typecheck": "tsc --noEmit",
+    "cost": "tsx scripts/cost.ts",
+    "feedback": "tsx src/cli.ts feedback"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.133.0",
+    "@modelcontextprotocol/sdk": "^1.32.1",
+    "@typesafe-ai/sdk": "^0.6.0",
+    "zod": "^3.25.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "tsx": "^4.19.0",
+    "typescript": "^5.6.0"
+  }
+}

@@ -1,0 +1,22 @@
+[
+  { "id": "P01", "gold": "haiku",  "why": "Typo en docs.", "task": "Fix the typo 'recieve' in README.md (Local setup section)." },
+  { "id": "P02", "gold": "haiku",  "why": "Cambio de config de una línea.", "task": "Sube el timeout del cliente HTTP de fraud-scoring de 3000 ms a 5000 ms en config/default.json." },
+  { "id": "P03", "gold": "sonnet", "why": "Bug local con lógica (null check + test).", "task": "Fix KI-101: PricingEngine.applyPromotion crashes when the coupon expired between cart load and payment. Add a regression test." },
+  { "id": "P04", "gold": "haiku",  "why": "Renombrar etiqueta de UI.", "task": "Cambia el texto del botón 'Enviar' por 'Transferir dinero' en TransferButton.tsx." },
+  { "id": "P05", "gold": "opus",   "why": "Idempotencia en cobros: dinero + concurrencia.", "task": "Fix E01: charges are created twice when the gateway retries. Make capture idempotent using the payment_intent id, safe under concurrent retries." },
+  { "id": "P06", "gold": "sonnet", "why": "Feature acotada, varios archivos.", "task": "Agrega exportación a XLSX en el reporte de clientes, reutilizando el mismo query que el CSV." },
+  { "id": "P07", "gold": "haiku",  "why": "TRAMPA: suena a dinero pero es solo texto.", "task": "Change the refund button copy from 'Request refund' to 'Ask for a refund' on the order page." },
+  { "id": "P08", "gold": "sonnet", "why": "Bug de compatibilidad con polyfill y test.", "task": "Fix E12: structuredClone is not available in Safari 15 on the checkout PayButton. Use a safe fallback and add a test." },
+  { "id": "P09", "gold": "opus",   "why": "Auth + caché + rotación de llaves: seguridad.", "task": "Fix KI-104 for good: refresh the JWKS cache on unknown kid with rate limiting, in both auth-service (TS) and api-gateway (Go), without opening a cache-bypass DoS." },
+  { "id": "P10", "gold": "haiku",  "why": "Agregar una línea a .gitignore.", "task": "Agrega la carpeta coverage/ al .gitignore." },
+  { "id": "P11", "gold": "sonnet", "why": "Refactor mediano en un módulo.", "task": "Refactor src/reports/OrdersReport.ts to use the new formatDate helper and split run() into fetch, transform and serialize functions." },
+  { "id": "P12", "gold": "haiku",  "why": "Bump de versión menor.", "task": "Bump date-fns from 3.6.0 to 3.7.1 in package.json." },
+  { "id": "P13", "gold": "sonnet", "why": "TRAMPA: suena simple pero cruza API, cliente y tests.", "task": "Agrega paginación a GET /orders: cursor en la API, soporte en el cliente web y tests de ambos lados." },
+  { "id": "P14", "gold": "sonnet", "why": "Bug de encoding acotado.", "task": "Fix E06: the CSV export writes Latin-1; switch to UTF-8 with BOM so Excel opens accented names correctly." },
+  { "id": "P15", "gold": "opus",   "why": "Migración de datos + multi-tenant.", "task": "Diseña e implementa la migración para mover orders a particiones mensuales por tenant sin downtime, con backfill y plan de rollback." },
+  { "id": "P16", "gold": "sonnet", "why": "Feature con validación, un dominio.", "task": "Add server-side validation for the avatar upload: reject files over 5 MB and convert HEIC to JPEG before resizing." },
+  { "id": "P17", "gold": "haiku",  "why": "Cambio de log trivial.", "task": "Cambia el nivel del log 'cache miss' de info a debug en src/cache/redis.ts." },
+  { "id": "P18", "gold": "opus",   "why": "TRAMPA: suena a config, pero es límite de dinero por tenant + migración.", "task": "Haz que el límite diario de transferencias sea configurable por tenant, con migración del valor actual y auditoría de cambios." },
+  { "id": "P19", "gold": "sonnet", "why": "Bug de hidratación, un componente + test.", "task": "Fix KI-103: render the dashboard greeting time only on the client to avoid the hydration mismatch, with a test." },
+  { "id": "P20", "gold": "opus",   "why": "Webhooks de pago caídos: dinero + seguridad (firma).", "task": "Fix E11: Stripe webhook signature verification rejects every event after the secret rotation. Support both secrets during rotation and replay the rejected events safely." }
+]
