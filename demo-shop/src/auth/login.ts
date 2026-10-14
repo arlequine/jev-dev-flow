@@ -7,7 +7,7 @@ import { UnauthorizedError } from "../errors";
 export async function login(email: string, password: string) {
   const user = await users.findByEmail(email);
   if (!user || !(await verifyPassword(user, password))) {
-    logger.warn("login failed", { email });
+    logger.warn("auth.login.failed: invalid credentials", { email });
     throw new UnauthorizedError();
   }
   return user;
